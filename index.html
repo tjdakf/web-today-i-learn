@@ -1,148 +1,187 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="initial-scale=1, width=device-width"/>
+  <meta property="og:title" content="캐리의 Today I Learn" />
+  <meta property="og:description" content="캐리의 간단한 소개와 개발 학습 기록 페이지입니다." />
+  <meta property="og:image" content="./images/thumbnail.png" />
+  <title>캐리의 Today I Learn</title>
+  <link rel="stylesheet" href="./css/main.css"/>
+  <script src="./js/index.js" defer></script>
+</head>
+<body>
+<!-- 상단 내비게이션 -->
+<nav class="top-nav">
+  <span class="nav-logo">My Page</span>
+  <ul class="nav-links">
+    <li><a href="#about">자기소개</a></li>
+    <li><a href="#gallery">갤러리</a></li>
+    <li><a href="#works">인생 작품</a></li>
+    <li><a href="#til">TIL</a></li>
+  </ul>
+</nav>
 
-    <!-- TODO: Open Graph 메타 태그를 설정하세요 -->
-    <!-- <meta property="og:title" content="페이지 제목" /> -->
-    <!-- <meta property="og:description" content="페이지 설명" /> -->
-    <!-- <meta property="og:image" content="./images/thumbnail.jpg" /> -->
+<!-- 프로필 히어로 -->
+<section class="hero" id="about">
+  <video id="hero-video" src="./videos/background.mp4" autoplay loop muted playsinline></video>
+  <div class="profile-card">
+    <div class="profile-image">
+      <img src="./images/profile.JPG" alt="프로필 사진"/>
+    </div>
+    <div class="profile-info">
+      <h1>캐리</h1>
+      <p class="tagline">화이팅</p>
+    </div>
+  </div>
+</section>
 
-    <title>Today I Learn</title>
-    <link rel="stylesheet" href="./css/main.css" />
-    <script src="./js/index.js" defer></script>
-  </head>
-  <body>
-    <!-- 상단 내비게이션 -->
-    <nav class="top-nav">
-      <span class="nav-logo">My Page</span>
-      <ul class="nav-links">
-        <li><a href="#about">자기소개</a></li>
-        <li><a href="#gallery">갤러리</a></li>
-        <li><a href="#works">인생 작품</a></li>
-        <li><a href="#til">TIL</a></li>
-      </ul>
-    </nav>
+<main>
+  <!-- 자기소개 -->
+  <section class="content-section">
+    <h2>자기소개</h2>
+    <p>
+      안녕하세요. 캐리입니다. 멋진 개발자가 되기 위해 부단히 노력중입니다. <br>
+      <a href="https://github.com/tjdakf">캐리 깃허브 바로가기</a>
+    </p>
+  </section>
 
-    <!-- 프로필 히어로 -->
-    <section class="hero" id="about">
-      <div class="profile-card">
-        <div class="profile-image">
-          <!-- TODO: 프로필 이미지를 넣어주세요 -->
-          <!-- <img src="./images/profile.jpg" alt="프로필 사진" /> -->
-        </div>
-        <div class="profile-info">
-          <h1>닉네임</h1>
-          <p class="tagline">한 줄 소개를 작성해주세요.</p>
-        </div>
+  <!-- 기본 정보 -->
+  <section class="content-section" id="info">
+    <h2>기본 정보</h2>
+    <table class="info-table">
+      <tr>
+        <th>이름</th>
+        <td>김성철</td>
+      </tr>
+      <tr>
+        <th>MBTI</th>
+        <td>ISTP</td>
+      </tr>
+      <tr>
+        <th>취미</th>
+        <td>공부</td>
+      </tr>
+      <tr>
+        <th>좋아하는 음식</th>
+        <td>볶음밥</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 나만의 갤러리 -->
+  <section class="content-section" id="gallery">
+    <h2>나만의 갤러리</h2>
+    <p class="section-desc">애니멀 친구들</p>
+    <div class="gallery-grid">
+      <img src="./images/gallery-1.jpeg" alt="갤러리 이미지 1"/>
+      <img src="./images/gallery-2.jpeg" alt="갤러리 이미지 2"/>
+      <img src="./images/gallery-3.jpeg" alt="갤러리 이미지 3"/>
+      <img src="./images/gallery-4.jpeg" alt="갤러리 이미지 4"/>
+      <img src="./images/gallery-5.jpeg" alt="갤러리 이미지 5"/>
+      <img src="./images/gallery-6.jpeg" alt="갤러리 이미지 6"/>
+      <img src="./images/gallery-7.jpeg" alt="갤러리 이미지 7"/>
+      <img src="./images/gallery-8.jpeg" alt="갤러리 이미지 8"/>
+      <img src="./images/gallery-9.jpeg" alt="갤러리 이미지 9"/>
+    </div>
+    <div id="lightbox">
+      <button id="lightbox-prev">&#8249;</button>
+      <img id="lightbox-img" src="" alt="확대 이미지"/>
+      <button id="lightbox-next">&#8250;</button>
+    </div>
+  </section>
+
+  <!-- 나를 울린 인생 작품 -->
+  <section class="content-section" id="works">
+    <h2>나를 울린 인생 작품</h2>
+    <ul class="works-list">
+      <li>
+        <article class="work-card">
+          <div class="work-thumbnail">
+            <img src="./images/thumbnail-1.jpeg" alt="썸네일 이미지 1"/>
+          </div>
+          <div class="work-info">
+            <h3>늑대의 유혹</h3>
+            <p>
+              격과 외모에서 모두 '갓 상경' 한 느낌을 풍기는 한경, 서울에서 엄마와 함께 살기 위해 말 그대로
+              '갓 상경'하여 강신고로 전학을 오는데... 그러나 그녀의 서울 생활은 정신적, 신체적 충격의 연속이다.
+              버스를 타고 가는데 어떤 놈이 던진 실내화가 머리로 날아온다. 그런데 문제는 거기서 끝나지 않는다.
+              실내화를 던진 반해원이란 녀석이 예삿 녀석이 아니었던 것이다. 인근 학교의 여자애들을 구름처럼 몰고 다니는
+              원조 킹카 반해원은 허둥대는 한경의 안쓰럽고도 귀여운 모습에 반한다. 그리고 성격대로 저돌적으로 대시한다..
+              문제는 옆 학교 성권고의 짱 정태성도 바로 이 정한경을 찍었다는 사실이다. 수줍은 듯한 얼굴 뒤에 숨어있는
+              강한 주먹과 고집으로 뭉쳐진 태성. 자존심과 사랑을 모두 건 둘의 대결은 한치의 양보도 없는 싸움으로 번지게 되고,
+              그러나 태성은 한경을 사랑할래야 할 수 없는 운명적인 비밀이 있고, 이를 알지 못하는 한경은 둘 다에게
+              상처를 주지 않는 방법을 찾기 위해 고민에 고민을 거듭한다. 결국 한경 곁을 떠나는 태성, 그리고 뒤늦게
+              태성의 비밀을 알게 된 한경과 해원. 그 녀석들의 가슴 아프지만 밝은 모습이 어른들조차 울린다.
+            </p>
+            <iframe src="https://www.youtube.com/embed/lwmahhmjvcw?si=B7s1U1FyvuqLhZid&autoplay=0&mute=0&controls=1"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="work-card">
+          <div class="work-thumbnail">
+            <img src="./images/thumbnail-2.jpeg" alt="썸네일 이미지 2"/>
+          </div>
+          <div class="work-info">
+            <h3>형</h3>
+            <p>
+              유도 국가대표 고두영(도경수)은 경기 도중 불의의 사고를 당하게 되고 이 소식을 들은 사기전과 10범의 형
+              고두식(조정석)은 눈물의 석방 사기극을 펼친다! “형은 개뿔, 제발 내 인생에서 꺼져!” 형이 돌아오고 인생이
+              더 깜깜해졌다! 하루 아침에 앞이 깜깜해진 동생을 핑계로 1년간 보호자 자격으로 가석방 된 두식!.
+              15년동안 단 한번도 연락이 없던 뻔뻔한 형이 집으로 돌아오고 보호자 노릇은커녕 ‘두영’의 삶을 더 엉망진창으로
+              만드는데…. 남보다 못한 형제의 예측불허 동거가 시작된다!
+            </p>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </section>
+
+  <!-- TIL (Today I Learned) -->
+  <section class="content-section" id="til">
+    <h2>TIL</h2>
+    <p class="section-desc">오늘 새롭게 배운 것들을 기록합니다.</p>
+
+    <!-- TIL 작성 폼 -->
+    <form class="til-form" id="til-form">
+      <div class="form-group">
+        <label for="til-date">날짜</label>
+        <input type="date" id="til-date" name="date" required/>
       </div>
-    </section>
+      <div class="form-group">
+        <label for="til-title">제목</label>
+        <input type="text" id="til-title" name="title" placeholder="학습 주제를 입력하세요" required/>
+      </div>
+      <div class="form-group">
+        <label for="til-content">내용</label>
+        <textarea id="til-content" name="content" placeholder="오늘 배운 내용을 정리해주세요" required></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit">등록</button>
+        <button type="reset">초기화</button>
+      </div>
+    </form>
 
-    <main>
-      <!-- 자기소개 -->
-      <section class="content-section">
-        <h2>자기소개</h2>
-        <p>자기소개를 작성해주세요.</p>
-        <!-- TODO: 소개 글 안에 블로그, GitHub 등 관련 링크를 <a> 태그로 연결하세요 -->
-      </section>
+    <!-- TIL 목록: 폼으로 등록하면 여기에 항목이 추가됩니다 -->
+    <div class="til-list" id="til-list">
+      <!-- 아래는 예시 항목입니다. 자유롭게 수정하거나 삭제하세요 -->
+      <article class="til-item">
+        <time>2026-03-15</time>
+        <h3>HTML 시멘틱 태그</h3>
+        <p>header, nav, main, section, article, footer 등 시멘틱 태그의 역할과 사용법을 배웠다.</p>
+      </article>
+    </div>
+  </section>
 
-      <!-- 기본 정보 -->
-      <section class="content-section" id="info">
-        <h2>기본 정보</h2>
-        <!-- TODO: 자신의 기본 정보를 표(<table>)로 정리하세요 -->
-        <table class="info-table">
-          <tr>
-            <th>이름</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>MBTI</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>취미</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>좋아하는 음식</th>
-            <td></td>
-          </tr>
-        </table>
-      </section>
+</main>
 
-      <!-- 나만의 갤러리 -->
-      <section class="content-section" id="gallery">
-        <h2>나만의 갤러리</h2>
-        <p class="section-desc">갤러리 부제를 작성해주세요. (예: 기억에 남는 여행지)</p>
-        <div class="gallery-grid">
-          <!-- TODO: 9장의 이미지를 배치하세요 -->
-          <!--
-          <img src="./images/gallery-1.jpg" alt="갤러리 이미지 1" />
-          <img src="./images/gallery-2.jpg" alt="갤러리 이미지 2" />
-          ...
-          -->
-        </div>
-      </section>
-
-      <!-- 나를 울린 인생 작품 -->
-      <section class="content-section" id="works">
-        <h2>나를 울린 인생 작품</h2>
-        <div class="works-list">
-          <!-- TODO: 최소 2가지 작품을 소개하세요 -->
-          <!-- TODO: 작품 중 하나는 <video> 또는 <iframe>으로 영상을 삽입하세요 -->
-          <article class="work-card">
-            <div class="work-thumbnail">
-              <!-- 작품 이미지 -->
-            </div>
-            <div class="work-info">
-              <h3>작품 제목</h3>
-              <p>작품에 대한 설명을 작성해주세요.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- TIL (Today I Learned) -->
-      <section class="content-section" id="til">
-        <h2>TIL</h2>
-        <p class="section-desc">오늘 새롭게 배운 것들을 기록합니다.</p>
-
-        <!-- TIL 작성 폼 -->
-        <form class="til-form" id="til-form">
-          <div class="form-group">
-            <label for="til-date">날짜</label>
-            <input type="date" id="til-date" name="date" required />
-          </div>
-          <div class="form-group">
-            <label for="til-title">제목</label>
-            <input type="text" id="til-title" name="title" placeholder="학습 주제를 입력하세요" required />
-          </div>
-          <div class="form-group">
-            <label for="til-content">내용</label>
-            <textarea id="til-content" name="content" placeholder="오늘 배운 내용을 정리해주세요" required></textarea>
-          </div>
-          <div class="form-actions">
-            <button type="submit">등록</button>
-            <button type="reset">초기화</button>
-          </div>
-        </form>
-
-        <!-- TIL 목록: 폼으로 등록하면 여기에 항목이 추가됩니다 -->
-        <div class="til-list" id="til-list">
-          <!-- 아래는 예시 항목입니다. 자유롭게 수정하거나 삭제하세요 -->
-          <article class="til-item">
-            <time>2026-03-15</time>
-            <h3>HTML 시멘틱 태그</h3>
-            <p>header, nav, main, section, article, footer 등 시멘틱 태그의 역할과 사용법을 배웠다.</p>
-          </article>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <p>&copy; My Page</p>
-    </footer>
-  </body>
+<footer>
+  <p>&copy; My Page</p>
+</footer>
+</body>
 </html>
